@@ -2,7 +2,7 @@ package SWF::Header;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 use SWF::BinStream;
 use Carp;
@@ -160,9 +160,6 @@ sub parse_header {
 
 }
 
-1;
-
-
 =head1 COPYRIGHT
 
 Copyright 2004 William Ross (wross@cpan.org)
@@ -180,3 +177,5 @@ The SWF file format specification from Macromedia can be found at
 http://www.openswf.org/spec/SWFfileformat.html
 
 =cut
+
+1;

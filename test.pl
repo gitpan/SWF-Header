@@ -10,7 +10,7 @@ BEGIN {
 my $h = SWF::Header->new;
 ok( $h, 'header object constructed' );
 
-my $header = SWF::Header->read_file('./test/banner.swf');
+my $header = SWF::Header->read_file('./test/test.swf');
 my $expected = {
     'version' => 6,
     'xmin' => 0,

@@ -4,4 +4,5 @@ MANIFEST
 README
 lib/SWF/Header.pm
 test.pl
+test/test.swf
 META.yml                                Module meta-data (added by MakeMaker)
