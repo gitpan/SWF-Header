@@ -1,0 +1,11 @@
+Revision history for Perl extension SWF::Header.
+
+0.02 Thurs June 3 2004
+     * stream-creation logic tweaked to work better with a 
+       supplied stream
+     * First enquiry to YSAS to see if he minds.
+
+0.01 Thurs June 3 2004
+     * Extracted and simplified from YSAS's SWF::Parser
+     * Given simple OOP interface for one-shot or repeated use
+
