@@ -2,7 +2,7 @@ package SWF::Header;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = '0.03';
+$VERSION = '0.04';
 
 use SWF::BinStream;
 use Carp;
@@ -128,6 +128,7 @@ Checks that this is a properly-formatted SWF file, then pulls the relevant bytes
     width => calculated width of stage (in pixels),
     height => calculated height of stage (in pixels),
     duration => calculated duration of movie (in seconds),
+    background => calculated background color of movie (in html format),
   }
   
 =cut
@@ -156,8 +157,14 @@ sub parse_header {
     $header->{width} = int(($header->{xmax} - $header->{xmin}) / 20);
     $header->{height} = int(($header->{ymax} - $header->{ymin}) / 20);
     $header->{duration} = $header->{count} / $header->{rate};
-    return $header;
 
+    my $temp = $self->stream->get_sbits($nbits);
+    my $background_r = $self->stream->get_UI8();
+    my $background_g = $self->stream->get_UI8();
+    my $background_b = $self->stream->get_UI8();
+    $header->{background} = sprintf ("#%02X%02X%02X", $background_r, $background_g, $background_b);
+
+    return $header;
 }
 
 =head1 COPYRIGHT

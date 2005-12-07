@@ -3,7 +3,7 @@ use lib qw( ../lib );
 use Test::More;
 
 BEGIN {
-    plan (tests => 14);
+    plan (tests => 15);
     use_ok('SWF::Header');
 }
 
@@ -24,8 +24,9 @@ my $expected = {
     'signature' => 'CWS',
     'ymin' => 0,
     'height' => 60,
+    'background' => '#FFFFFF',
 };
 
-for ( qw(signature version filelen count rate duration xmin xmax ymin ymax width height) ) {
+for ( qw(signature version filelen count rate duration xmin xmax ymin ymax width height background) ) {
     is($header->{$_}, $expected->{$_}, "$_ = $header->{$_}");
 }

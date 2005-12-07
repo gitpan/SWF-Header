@@ -1,5 +1,8 @@
 Revision history for Perl extension SWF::Header.
 
+0.04 Mon Dec 7 2005
+     * now reads stage background color too, thanks to vlanis@mail.ru
+
 0.03 Mon June 21 2004
      * test.swf unnacountably missing from v0.02, so tests fail, all woe. fixed.
 
